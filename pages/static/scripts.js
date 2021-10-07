@@ -1,5 +1,7 @@
-const answer_Text = document.querySelector('.answer');
+const answerText = document.querySelector('.answer')
 
-function change_button_Color(color) {
-    answer_Text.style.color = color;
+function changetextColor (opacityValue) {
+  answerText.style.opacity = opacityValue
 }
+
+changetextColor()

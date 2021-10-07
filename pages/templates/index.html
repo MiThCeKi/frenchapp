@@ -2,7 +2,6 @@
 {% load static %}
 
 <html lang="en">
-
     <head>
         <title> French Word Exercises</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -13,21 +12,17 @@
         <br>
         <br>
         <br>
-        <p> Here is the english number: </p>
-        <p>{{english_number}} </p>
+        <p> Comment dit-on ce nombre en français?</p>
         <br>
-        <br>
-        <br>
-        <br>
-        <p> What is the french number?</p> 
-        <p class = "answer"> The answer is: {{french_number}}<p>
-        <br>
-        <br>
-        <br>
+         <p>{{english_number}} </p>
+        <p class = "answer">{{french_number_text}}<p>
         <div>
-            <button onclick = change_text_Color('black') class ="button red"> Click here to show the answer </button>
-            <script src="scripts.js"></script>
+            <button onclick = "changetextColor(opacityValue=1)" class ="button black"> Show me the answer! </button>
+            <script src="static/scripts.js"></script>
+            <br>
+            <br>
+            <button onclick = "window.location.reload();" class ="button green"> Play again </button>
         </div>
-        
+        <h3 id="smalltext">You've played {{counter}} times <h3>
     </body>
 </html>
