@@ -10,7 +10,6 @@ counter = 0
 done_already = [1]
 
 def index(request):
-    print(request.path)
     global counter
     random_number = random.randint(1,50)
     print(random_number)
