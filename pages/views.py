@@ -5,6 +5,7 @@ import inflect
 from googletrans import Translator
 import random
 
+
 # Create your views here.
 #######----Plan----#######
 #1)It looks like I have to set up a dynamic URL in the main urls.py file. 
@@ -18,11 +19,11 @@ import random
 # have a record of their correct and incorrect answers. 
 #4) I wonder if it would be cool to have record of correct guesses in their profile.
 
-
 counter = 0
 done_already = [1]
 
-def index(request):
+def index(request, guessed_number):
+    print(guessed_number)
     #this part generates the random number, the translation, and times played counter.
     global counter
     random_number = random.randint(1,50)

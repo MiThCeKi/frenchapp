@@ -1,7 +1,6 @@
 from django.urls import path
 from . import views
 
-
 urlpatterns = [
-    path('', views.index, name='index')
+    path('index/<int:guessed_number>', views.index, name='index')
 ]

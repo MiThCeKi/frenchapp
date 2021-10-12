@@ -5,9 +5,8 @@ function changetextColor (opacityValue) {
 }
 changetextColor()
 
+// function duplicateNumber (random_number) {
+//   window.location.replace(random_number)
+// }
 
-function duplicateNumber (random_number) {
-  window.location.replace(random_number)
-}
-
-duplicateNumber()
+// duplicateNumber()
