@@ -26,8 +26,8 @@ import random
 counter = 0
 done_already = [1]
 
-def index(request, guessed_number):
-    print(guessed_number)
+def index(request, attempt):
+    print(attempt)
     #this part generates the random number, the translation, and times played counter.
     global counter
     random_number = random.randint(1,50)

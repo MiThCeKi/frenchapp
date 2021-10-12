@@ -17,9 +17,14 @@
          <p>{{english_number}} </p>
         <p class = "answer">{{french_number_text}}<p>
         <div>
-            <form method='GET' action=> 
-                <input type='text' name='attempt_input' placeholder = "Enter the number in french">
+            <form method='POST' action=''> 
+                {% csrf_token %}
+                {{form}}
+
+                <input type='text' name='attempt' placeholder = "Enter the number in french">
+                <input submit='text' name='go_button' placeholder = "Let's go!"">
             </form>
+            
         </div>
         <div>
             <button onclick = "changetextColor(opacityValue=1)" class ="button black"> Show me the answer! </button>
