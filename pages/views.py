@@ -4,7 +4,7 @@ from django.http import HttpResponse
 import inflect
 from googletrans import Translator
 import random
-
+from pages.forms import Attempt_Form
 
 # Create your views here.
 #######----Plan----#######
@@ -28,6 +28,11 @@ done_already = [1]
 
 def index(request, attempt):
     print(attempt)
+    form = Attempt_Form(request.POST or None)
+    if form.is_valid():
+        print(form.cleaned_data)
+        
+    
     #this part generates the random number, the translation, and times played counter.
     global counter
     random_number = random.randint(1,50)
@@ -41,8 +46,11 @@ def index(request, attempt):
     counter += 1
     #this part renders the webpage 
     context = {
+        'attempt': attempt,
+        'form':form,
         'english_number': english_number,
         'french_number_text': french_number_text,
         'counter': counter,
+        
         }
     return render(request, 'index.html', context)

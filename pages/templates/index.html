@@ -17,17 +17,20 @@
          <p>{{english_number}} </p>
         <p class = "answer">{{french_number_text}}<p>
         <div>
-            <form method='POST' action=''> 
+            <form method='POST' action='attempt'> 
                 {% csrf_token %}
+                
                 {{form}}
+                
+                {% comment %} <label for="attempt">Attempt</label> {% endcomment %}
+                <input type='submit' name='attempt' value = "Apprenons quelque chose!">
 
-                <input type='text' name='attempt' placeholder = "Enter the number in french">
-                <input submit='text' name='go_button' placeholder = "Let's go!"">
+                {% comment %} <input type='text' name='attempt' placeholder = "Enter the number in french"> {% endcomment %}
+
             </form>
-            
         </div>
         <div>
-            <button onclick = "changetextColor(opacityValue=1)" class ="button black"> Show me the answer! </button>
+            <button onclick = "changetextColor(opacityValue=1)" class ="button black"> I've tried twice. Show me the answer </button>
             <script src="/static/css/scripts.js"></script>
             <br>
             <br>
