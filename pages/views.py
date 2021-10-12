@@ -15,7 +15,8 @@ from pages.forms import Attempt_Form
 # do this this parameter is included as an argument along side the request.
 
 # (a) There should be a submit button to put this in the url maybe?
-# (b)
+# (b) Decided to use Django Forms and making progress but not completely understanding
+# what is happenening yet. 
 
 #3)This parameter should be saved in the database so it can be called on in the template.
 # The purpose of calling on the guess is to show the student what they guessed vs the correct
