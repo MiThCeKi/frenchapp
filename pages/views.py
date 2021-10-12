@@ -12,7 +12,11 @@ import random
 # This is set with <parameter name here> and also a type is specified before it. The
 # syntax is <int: guessednumber> where guessednumber is the parameter.
 #2)Then I have to make sure the name of this parameter is specified in the view. To
-# do this this parameter is included as an argument along side the request. 
+# do this this parameter is included as an argument along side the request.
+
+# (a) There should be a submit button to put this in the url maybe?
+# (b)
+
 #3)This parameter should be saved in the database so it can be called on in the template.
 # The purpose of calling on the guess is to show the student what they guessed vs the correct
 # answer. There is some possibility that I'll create a username and password so users can
