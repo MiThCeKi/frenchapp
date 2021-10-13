@@ -1,4 +1,13 @@
 
+.brmedium {
+  margin: 1em;
+}
+
+.brlarge {
+  margin: 2em;
+}
+
+
 p {
   color:red;
   font-size: 4rem;
@@ -15,6 +24,7 @@ p {
 
 div {
   text-align: center;
+  margin: 4em
 }
 
 .answer {
@@ -50,3 +60,5 @@ body {
   background-image: url("vanier1.png");
   background-size: cover;
 }
+
+

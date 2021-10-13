@@ -9,25 +9,21 @@
     </head>
     
     <body>
-        <br><br><br>
-        <div><p> Comment dit-on ce nombre en français?</p>
+        <div>
+            <p> Comment dit-on ce nombre en français?</p>
             <br>
             <p>{{english_number}} </p>
             <p class = "answer">{{french_number_text}}<p>
         </div>
 
         <div>
-            {% comment %} <form method='POST' action=''>  {% endcomment %}
-                {% csrf_token %}
-                
-                {{form}}
-                {% comment %} <label for="attempt">Attempt</label> {% endcomment %}
-                <input type='submit' name='Your Guess Here' value = "Apprenons quelque chose!">
-
-                {% comment %} <input type='text' name='attempt' placeholder = "Enter the number in french"> {% endcomment %}
-
-            {% comment %} </form> {% endcomment %}
+            <form method='POST' action=''>
+            {% csrf_token %}
+            {{form}}
+            <input type='submit' name='' value = "Apprenons quelque chose!">
+            </form>
         </div>
+        <br><br><br>
         <div>
             <button onclick = "changetextColor(opacityValue=1)" class ="button black"> I've tried twice. Show me the answer </button>
             <script src="/static/css/scripts.js"></script>
