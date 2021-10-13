@@ -1,6 +1,5 @@
 
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
 import inflect
 from googletrans import Translator
 import random
@@ -27,13 +26,17 @@ from pages.forms import Attempt_Form
 counter = 0
 done_already = [1]
 
-def index(request, attempt):
-    print(attempt)
-    form = Attempt_Form(request.POST or None)
-    if form.is_valid():
-        print(form.cleaned_data)
+def index(request, datahere):
+    print(datahere)
+    if request.method == 'POST':
+        form = Attempt_Form(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+            return render(request, 'index.html', {'form': form})
+    else:
+        form = Attempt_Form
+        return render(request, 'index.html', {'form': form})
         
-    
     #this part generates the random number, the translation, and times played counter.
     global counter
     random_number = random.randint(1,50)
@@ -47,7 +50,7 @@ def index(request, attempt):
     counter += 1
     #this part renders the webpage 
     context = {
-        'attempt': attempt,
+        'datahere': datahere,
         'form':form,
         'english_number': english_number,
         'french_number_text': french_number_text,
