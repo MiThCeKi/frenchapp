@@ -10,20 +10,16 @@
     
     <body>
         <div>
-            <p> Comment dit-on ce nombre en français?</p>
+            <p> Comment dit-on ce nombre en français? </p>
             <br>
             <p>{{english_number}} </p>
             <p class = "answer">{{french_number_text}}<p>
-        </div>
-
-        <div>
-            <form method='POST' action='datahere'>
+            <form method='POST' action='datahere' class = 'button'>
             {% csrf_token %}
             {{form}}
             <input type='submit' name='' value = "Apprenons quelque chose!">
             </form>
         </div>
-        <br><br><br>
         <div>
             <button onclick = "changetextColor(opacityValue=1)" class ="button black"> I've tried twice. Show me the answer </button>
             <script src="/static/css/scripts.js"></script>

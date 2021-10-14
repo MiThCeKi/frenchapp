@@ -25,22 +25,11 @@ from pages.forms import Attempt_Form
 
 counter = 0
 done_already = [1]
-
 def index(request, datahere):
-    print(datahere)
-    if request.method == 'POST':
-        form = Attempt_Form(request.POST)
-        if form.is_valid():
-            print(form.cleaned_data)
-            return render(request, 'index.html', {'form': form})
-    else:
-        form = Attempt_Form
-        return render(request, 'index.html', {'form': form})
-        
-    #this part generates the random number, the translation, and times played counter.
     global counter
     random_number = random.randint(1,50)
     print(random_number)
+    form = Attempt_Form(request.POST)
     p = inflect.engine()
     english_number = p.number_to_words(random_number)
     translator = Translator()
@@ -48,13 +37,26 @@ def index(request, datahere):
     french_number = translator.translate(english_number, src='en', dest='fr')
     french_number_text = french_number.text
     counter += 1
-    #this part renders the webpage 
+    
+    #these parts are rendered in the webpage 
     context = {
         'datahere': datahere,
         'form':form,
         'english_number': english_number,
         'french_number_text': french_number_text,
         'counter': counter,
-        
         }
+    
+    if request.method == 'POST':
+        form = Attempt_Form(request.POST)
+        if form.is_valid():
+            print(f"the cleaned data is : {form.cleaned_data}")
+            return render(request, 'index.html', context)
+    else:
+        form = Attempt_Form
+        print(f"the french number is : {french_number_text}")
+        return render(request, 'index.html', context)
+        
+    #this part generates the random number, the translation, and times played counter.
+    
     return render(request, 'index.html', context)
